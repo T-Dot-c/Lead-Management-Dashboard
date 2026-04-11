@@ -1,0 +1,50 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-headline: "Manrope", sans-serif;
+
+  --color-primary: #434ca5;
+  --color-primary-container: #5c65bf;
+  --color-surface: #f7f9fb;
+  --color-surface-container-low: #f2f4f6;
+  --color-surface-container-lowest: #ffffff;
+  --color-on-surface: #191c1e;
+  --color-on-surface-variant: #434656;
+  --color-tertiary: #006242;
+  --color-tertiary-fixed: #6ffbbe;
+  --color-outline-variant: #e0e3e5;
+}
+
+@layer base {
+  :root.dark {
+    --color-surface: #0f1113;
+    --color-surface-container-low: #1c1e21;
+    --color-surface-container-lowest: #151719;
+    --color-on-surface: #e1e2e5;
+    --color-on-surface-variant: #c1c4d6;
+    --color-outline-variant: #333639;
+  }
+
+  body {
+    @apply bg-surface text-on-surface font-sans antialiased;
+  }
+}
+
+/* Custom scrollbar for a cleaner look */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-outline-variant rounded-full;
+}
+
+.tracking-tightest {
+  letter-spacing: -0.04em;
+}
